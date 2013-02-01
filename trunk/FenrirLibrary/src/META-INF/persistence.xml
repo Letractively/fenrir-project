@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="FenrirLibraryPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.fenrir.erp.pojo.entity.Contatos</class>
+    <class>com.fenrir.erp.pojo.entity.Continente</class>
+    <class>com.fenrir.erp.pojo.entity.EmailEntidade</class>
+    <class>com.fenrir.erp.pojo.entity.Endereco</class>
+    <class>com.fenrir.erp.pojo.entity.EnderecoHasEntidade</class>
+    <class>com.fenrir.erp.pojo.entity.Entidade</class>
+    <class>com.fenrir.erp.pojo.entity.Estado</class>
+    <class>com.fenrir.erp.pojo.entity.IpPais</class>
+    <class>com.fenrir.erp.pojo.entity.Menu</class>
+    <class>com.fenrir.erp.pojo.entity.Moeda</class>
+    <class>com.fenrir.erp.pojo.entity.Municipio</class>
+    <class>com.fenrir.erp.pojo.entity.Pais</class>
+    <class>com.fenrir.erp.pojo.entity.Privilegio</class>
+    <class>com.fenrir.erp.pojo.entity.RegiaoPais</class>
+    <class>com.fenrir.erp.pojo.entity.Relacionamento</class>
+    <class>com.fenrir.erp.pojo.entity.RelacionamentoXEntidade</class>
+    <class>com.fenrir.erp.pojo.entity.Sistema</class>
+    <class>com.fenrir.erp.pojo.entity.TelefonesEntidade</class>
+    <class>com.fenrir.erp.pojo.entity.TipoTelefone</class>
+    <class>com.fenrir.erp.pojo.entity.Usuario</class>
+    <class>com.fenrir.erp.pojo.entity.Vertical</class>
+    <properties>
+      <property name="hibernate.connection.username" value="root"/>
+      <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+      <property name="hibernate.connection.password" value=""/>
+      <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/fenrir?zeroDateTimeBehavior=convertToNull"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+    </properties>
+  </persistence-unit>
+</persistence>
