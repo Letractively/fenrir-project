@@ -24,30 +24,23 @@ public class Conection_test {
 
         //testeConection(em);
         testeGenericDAO();
-
         //emf.close();
     }
 
     public static void testeConection(EntityManager em) {
-        if (em.isOpen()) {
-            System.out.println("A conexão esta ABERTA.");
-        }
-
+        verifyConection(em);
         em.getTransaction().begin();
         System.out.println("foi aberta uma trasação.");
-        List<Continente> result = em.createQuery(" SELECT r FROM Continente r ").getResultList();
-
+        StringBuilder sql = new StringBuilder();
+        sql.append(" SELECT r FROM Continente r ");
+        List<Continente> result = em.createQuery(sql.toString()).getResultList();
         for (Continente doc : result) {
             System.out.println(doc.getNmContinente().toString());
         }
         em.getTransaction().commit();
         System.out.println("trasação comitada.");
-
         em.close();
-
-        if (!em.isOpen()) {
-            System.out.println("A conexão esta FECHADA.");
-        }
+        verifyConection(em);
     }
 
     public static void testeGenericDAO() {
@@ -58,5 +51,13 @@ public class Conection_test {
             System.out.println(doc.getNmContinente());
         }
         condao.commitAndCloseTransaction();
+    }
+    
+    public static void verifyConection(EntityManager em){
+        if (!em.isOpen()) {
+            System.out.println("A conexão esta FECHADA.");
+        }else{
+            System.out.println("A conexão esta ABERTA.");
+        }
     }
 }
