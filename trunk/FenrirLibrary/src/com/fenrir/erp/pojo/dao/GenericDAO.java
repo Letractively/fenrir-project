@@ -4,11 +4,14 @@
  */
 package com.fenrir.erp.pojo.dao;
 
+import br.com.jpa.component.ConfigPersistence;
+import br.com.jpa.component.Configuration;
 import java.io.Serializable;
 import java.util.*;
 import java.util.Map.Entry;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaQuery;
+import com.thoughtworks.xstream.XStream;
 
 /**
  *
@@ -18,7 +21,9 @@ import javax.persistence.criteria.CriteriaQuery;
 abstract class GenericDAO<T> implements Serializable {
     private static final long serialVersionUID = 1L;
  
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("fenrirErpLibraryPU");
+    //private static final Configuration configuration = ConfigPersistence.getInstanceConfiguration();         
+    //private static final EntityManagerFactory emf = configuration.createEntityManagerFactory();
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("FenrirLibraryPU");
     private EntityManager em;
  
     private Class<T> entityClass;
