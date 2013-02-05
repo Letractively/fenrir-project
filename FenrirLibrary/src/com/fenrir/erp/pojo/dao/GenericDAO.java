@@ -21,9 +21,9 @@ import com.thoughtworks.xstream.XStream;
 abstract class GenericDAO<T> implements Serializable {
     private static final long serialVersionUID = 1L;
  
-    //private static final Configuration configuration = ConfigPersistence.getInstanceConfiguration();         
-    //private static final EntityManagerFactory emf = configuration.createEntityManagerFactory();
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("FenrirLibraryPU");
+    private static final Configuration configuration = ConfigPersistence.getInstanceConfiguration();         
+    private static final EntityManagerFactory emf = configuration.createEntityManagerFactory();
+    //private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("FenrirLibraryPU");
     private EntityManager em;
  
     private Class<T> entityClass;
